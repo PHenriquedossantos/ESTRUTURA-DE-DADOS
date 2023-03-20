@@ -12,16 +12,15 @@ if menu == 1:
     vetor_teste.inserir_elemento_posicao(2, 1)
     vetor_teste.inserir_elemento_posicao(3, 2)
     vetor_teste.inserir_elemento_posicao(4, 2)
-    vetor_teste.inserir_elemento_final(1)
 
-
-
-    print(vetor_teste.listar_elemento(0))
-    print(vetor_teste.listar_elemento(1))
-    print(vetor_teste.listar_elemento(2))
-    print(vetor_teste.listar_elemento(3))
-    print(vetor_teste.listar_elemento(4))
     print(vetor_teste.tamanho_vetor())
+    print(vetor_teste)
+    print(vetor_teste.contem(4))
+    print(vetor_teste)
+    print(vetor_teste.indice(3))
+
+
+
 
 
 

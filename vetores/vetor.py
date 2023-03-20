@@ -8,7 +8,7 @@ class Vetor():
         return len(self.__elementos)
     
     def __str__(self):
-        return ' '.join([str(i) for i in self.__elementos])
+        return ' '.join([ str(i) for i in self.__elementos])
     
     def contem(self, elemento):
         for i in range(self.tamanho_vetor()):
@@ -21,7 +21,7 @@ class Vetor():
         for i in range(self.tamanho_vetor()):
             elem = self.listar_elemento(i)
             if elem == elemento:
-                return i 
+                return i
         return -1
 
     def inserir_elemento_posicao(self, elemento, posicao):
