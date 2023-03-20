@@ -16,6 +16,13 @@ class Vetor():
             if elem == elemento:
                 return True
         return False
+    
+    def indice(self, elemento):
+        for i in range(self.tamanho_vetor()):
+            elem = self.listar_elemento(i)
+            if elem == elemento:
+                return i 
+        return -1
 
     def inserir_elemento_posicao(self, elemento, posicao):
         vetor_inicio = self.__elementos[:posicao] + [None]
