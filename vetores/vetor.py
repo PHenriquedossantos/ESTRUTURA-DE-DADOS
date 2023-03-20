@@ -8,6 +8,8 @@ class Vetor():
         self.__elementos[posicao] = elemento
     
     def inserir_elemento_final(self, elemento):
+        if self.__posicao >= len(self.__elementos):
+            self.__elementos += [None]
         self.__elementos[self.__posicao] = elemento
         self.__posicao += 1
 
