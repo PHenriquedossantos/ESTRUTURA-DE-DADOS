@@ -4,16 +4,22 @@ class Vetor():
         self.__elementos = tamanho * [None] # [None, None, None...]
         self.__posicao = 0
 
-
     def tamanho_vetor(self):
         return len(self.__elementos)
     
     def __str__(self):
         return ' '.join([str(i) for i in self.__elementos])
+    
+    def contem(self, elemento):
+        for i in range(self.tamanho_vetor()):
+            elem = self.listar_elemento(i)
+            if elem == elemento:
+                return True
+        return False
 
     def inserir_elemento_posicao(self, elemento, posicao):
-        vetor_inicio = self.__elementos[:posicao] + [None] #Pega até uma posicao antes da variável posicao
-        vetor_final = self.__elementos[posicao:] #pega tudo incluindo a variavel posicao
+        vetor_inicio = self.__elementos[:posicao] + [None]
+        vetor_final = self.__elementos[posicao:] 
         vetor_inicio[-1] = elemento
         
         self.__elementos = vetor_inicio + vetor_final
