@@ -5,7 +5,12 @@ class Vetor():
         self.__posicao = 0
 
     def inserir_elemento_posicao(self, elemento, posicao):
-        self.__elementos[posicao] = elemento
+        vetor_inicio = self.__elementos[:posicao] + [None] #Pega até uma posicao antes da variável posicao
+        vetor_final = self.__elementos[posicao:] #pega tudo incluindo a variavel posicao
+        vetor_inicio[-1] = elemento
+        
+        self.__elementos = vetor_inicio + vetor_final
+        self.__posicao += 1
     
     def inserir_elemento_final(self, elemento):
         if self.__posicao >= len(self.__elementos):
