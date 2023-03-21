@@ -11,12 +11,15 @@ class LinkedList:
             while(pointer.next):
                 pointer = pointer.next
             self.next = Node(elem)
-            self._size +=1
         else:
             #primeira insercao
             self.head = Node(elem)
             self._size +=1
 
 
+    def __len__(self):
+        return self._size
+
 x = LinkedList()
 x.append(22)
+print(x.__len__())
