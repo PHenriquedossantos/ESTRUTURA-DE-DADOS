@@ -33,7 +33,9 @@ class LinkedList:
                 pointer = pointer.next
             else:
                 raise IndexError("list index out of range")
-
+        if pointer:
+            return pointer.data
+        raise IndexError("list index out of range")
     def __setitem__(self, index):
         pass
 
