@@ -12,13 +12,30 @@ class LinkedList:
                 pointer = pointer.next
             self.next = Node(elem)
         else:
-            #primeira insercao
             self.head = Node(elem)
             self._size +=1
 
 
     def __len__(self):
         return self._size
+    
+    def set(self, index, elem):
+        pass
+
+    def get(self, index):
+        pass
+
+    def __getitem__(self, index):
+        # a = lista[6]
+        pointer = self.head
+        for i in range(index):
+            if pointer:
+                pointer = pointer.next
+            else:
+                raise IndexError("list index out of range")
+
+    def __setitem__(self, index):
+        pass
 
 x = LinkedList()
 x.append(22)
