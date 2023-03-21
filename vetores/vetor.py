@@ -16,7 +16,7 @@ class Vetor():
             if elem == elemento:
                 return True
         return False
-    
+
     def indice(self, elemento):
         for i in range(self.tamanho_vetor()):
             elem = self.listar_elemento(i)
