@@ -69,7 +69,23 @@ class LinkedList:
             pointer = self._getnode(index-1)
             node.next = pointer.next
             pointer.next = node
-        self._size +=1 
+        self._size +=1
+
+    def remove(self, elem):
+        if self.head.data == elem:
+            self.head = self.head.next
+        else:
+            ancestor = self.head
+            pointer = self.head.next
+            while(pointer):
+                if pointer.data == elem:
+                    ancestor.next = pointer.next
+                    pointer.next = None
+                ancestor = pointer
+                pointer = pointer.next
+                
+            
+
 
 
 x = LinkedList()
@@ -77,5 +93,7 @@ x.append(1)
 x.append(2)
 x.append(3)
 x.append(4)
-print(x.index(5))
+x.insert(3, 4)
+
+
 
