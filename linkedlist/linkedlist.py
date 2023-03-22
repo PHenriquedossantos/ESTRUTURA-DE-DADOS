@@ -24,30 +24,25 @@ class LinkedList:
         # lista.set(5, 9)
         pass
 
-    def get(self, index):
-        # a = lista.get(6)
-        pass
-
-    def __getitem__(self, index):
-        # a = lista[6]
+    def _getnode(self, index):
         pointer = self.head
         for i in range(index):
             if pointer:
                 pointer = pointer.next
             else:
                 raise IndexError("list index out of range")
+        return pointer
+
+    def __getitem__(self, index):
+        # a = lista[6]
+        pointer = self._getnode(index)
         if pointer:
             return pointer.data
         raise IndexError("list index out of range")
 
     def __setitem__(self, index, elem):
         #lista[2] = 20
-        pointer = self.head
-        for i in range(index):
-            if pointer:
-                pointer = pointer.next
-            else:
-                raise IndexError("list index out of range")
+        pointer = self._getnode(index)
         if pointer:
             pointer.data = elem
         else:
@@ -63,6 +58,18 @@ class LinkedList:
             pointer = pointer.next
             i += 1
         raise IndexError(f"{elem} is not in list")
+
+
+    def insert(self, index, elem):
+        if index == 0:
+            node = Node(elem)
+            node.next = self.head
+            self.head = node
+        else:
+            pointer = self._getnode(index-1)
+            node = Node(elem)
+            pointer.next = node
+
 
 x = LinkedList()
 x.append(1)
