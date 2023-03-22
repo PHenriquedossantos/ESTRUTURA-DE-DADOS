@@ -52,10 +52,22 @@ class LinkedList:
             pointer.data = elem
         else:
             raise IndexError("list index out of range")
+    
+    def index(self, elem):
+        """Retorna o índice do elemento na lista"""
+        pointer = self.head
+        i = 0
+        while(pointer):
+            if pointer.data == elem:
+                return i
+            pointer = pointer.next
+            i += 1
+        raise IndexError(f"{elem} is not in list")
 
 x = LinkedList()
 x.append(1)
 x.append(2)
-print(len(x))
-print(x[0])
-print(x[1])
+x.append(3)
+x.append(4)
+print(x.index(5))
+
