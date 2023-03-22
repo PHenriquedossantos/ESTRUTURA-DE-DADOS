@@ -92,7 +92,16 @@ class LinkedList:
         raise ValueError("{} is not in list".format(elem))
 
             
+    def __repr__(self):
+        r = ""
+        pointer = self.head
+        while(pointer):
+            r = r + str(pointer.data) + "->"
+            pointer = pointer.next
+        return r
 
+    def __str__(self):
+        return self.__repr__()
 
 
 x = LinkedList()
@@ -100,7 +109,8 @@ x.append(1)
 x.append(2)
 x.append(3)
 x.append(4)
-x.remove(100)
+x.remove(1)
+print(x[0])
 
 
 
