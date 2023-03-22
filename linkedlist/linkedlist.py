@@ -72,8 +72,12 @@ class LinkedList:
         self._size +=1
 
     def remove(self, elem):
-        if self.head.data == elem:
+        if self.head == None:
+            raise ValueError("{} is not in list".format(elem))
+        elif self.head.data == elem:
             self.head = self.head.next
+            self._size = self._size - 1
+            return True
         else:
             ancestor = self.head
             pointer = self.head.next
@@ -81,9 +85,12 @@ class LinkedList:
                 if pointer.data == elem:
                     ancestor.next = pointer.next
                     pointer.next = None
+                    self._size = self._size - 1
+                    return True
                 ancestor = pointer
                 pointer = pointer.next
-                
+        raise ValueError("{} is not in list".format(elem))
+
             
 
 
@@ -93,7 +100,7 @@ x.append(1)
 x.append(2)
 x.append(3)
 x.append(4)
-x.insert(3, 4)
+x.remove(100)
 
 
 
