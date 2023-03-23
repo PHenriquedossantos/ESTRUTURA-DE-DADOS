@@ -104,13 +104,13 @@ class LinkedList:
         return self.__repr__()
 
 
-x = LinkedList()
-x.append(1)
-x.append(2)
-x.append(3)
-x.append(4)
-x.remove(1)
-print(x[0])
+#x = LinkedList()
+#x.append(1)
+#x.append(2)
+#x.append(3)
+#x.append(4)
+#x.remove(1)
+#print(x)
 
 
 

@@ -1,4 +1,6 @@
 from vetores import vetor
+from linkedlist import linkedlist
+from linkedlist import node
 
 print(30 * "-", "MENU", 30*"-")
 print("1. Vetores")
@@ -18,6 +20,9 @@ if menu == 1:
     print(vetor_teste.contem(4))
     print(vetor_teste)
     print(vetor_teste.indice(3))
+elif menu == 2:
+    lista_ligada = linkedlist()
+    lista_ligada.append(2)
 
 
 
