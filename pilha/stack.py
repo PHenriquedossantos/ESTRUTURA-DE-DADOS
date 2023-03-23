@@ -21,22 +21,23 @@ class Stack:
             node = self.top
             self.top = self.top.next
             self._size -=1
-            return node
+            return node.data
         raise IndexError("The stack is empty")
     
     def peek(self):
         if self._size > 0:
-            return self.top
+            return self.top.data
         raise IndexError("The stack is empty")
+    
     def __len__(self):
         """Retorna o tamanho da lista"""
         return self._size
             
     def __repr__(self):
         r = ""
-        pointer = self.head
+        pointer = self.top
         while(pointer):
-            r = r + str(pointer.data) + "->"
+            r = r + str(pointer.data) + "\n"
             pointer = pointer.next
         return r
 
@@ -47,3 +48,9 @@ class Stack:
 
 
 
+x = Stack()
+x.push(2)
+x.push(3)
+x.push(4)
+x.push(5)
+print(x)
